@@ -1,14 +1,15 @@
 
+import { Provider } from 'react-redux'
 import Login from './Components/Login'
+import appStore from './Utility.js/appStore'
 
 function App() {
   
   return (
-    <>
-      <div>
+    <Provider store = {appStore}>
         <Login/>
-      </div>
-    </>
+    </Provider>
+  
   )
 }
 
