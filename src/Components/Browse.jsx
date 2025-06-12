@@ -1,11 +1,12 @@
 import React from 'react'
+import Header from './Header'
 
 const Browse = () => {
   return (
     <div>
-      <p>this is a browser page</p>
+      <Header/>
+        
 
-      
     </div>
   )
 }
