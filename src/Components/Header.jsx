@@ -17,7 +17,7 @@ const Header = () => {
       });
   }
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(
@@ -34,6 +34,9 @@ const Header = () => {
         navigate("/");
       }
     });
+    return () => {
+      unSubscribe();
+    };
   }, []);
   return (
     <div className="bg-gradient-to-b from-black to-transperant h-20 w-full z-10 flex justify-between absolute">
